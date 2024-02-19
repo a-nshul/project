@@ -9,6 +9,8 @@ const LoginPage = ({ onLogin }) => {
   const handleLogin = () => {
     if (username === 'olxapp' && password === 'password') {
       onLogin();
+      message.success('Login successful');
+
     } else {
         message.error('Invalid credentials');
     }

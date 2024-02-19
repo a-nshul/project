@@ -43,7 +43,16 @@
     margin: 10px 0;
     font-size: 16px;
     margin-top: 10px;
-  font-size: 16px;
-  color: #333;
+    font-size: 16px;
+    color: #333;
   }
-  
+  .productheader{
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }

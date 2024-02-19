@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ProductPage.css';
 
-const ProductPage = () => {
+function ProductPage(){
   const [searchTerm, setSearchTerm] = useState('');
   const [products, setProducts] = useState([
     { id: 1, name: 'VogueVista Couture', imageUrl: 'https://m.media-amazon.com/images/I/51NC6Kzct7L._AC_UY1100_.jpg' },
@@ -28,7 +28,7 @@ const ProductPage = () => {
 
   return (
     <div className="product-page">
-      <h2>Product Page</h2>
+      <h2 class="productheader">Product Page</h2>
       <input
         type="text"
         placeholder="Search for products by name..."
@@ -37,12 +37,16 @@ const ProductPage = () => {
         className="search-input"
       />
       <div className="product-container">
-        {filteredProducts.map((product) => (
-          <div key={product.id} className="product-item">
-            <img src={product.imageUrl} alt={product.name} className="product-image" />
-            <p className="product-name">{product.name}</p>
-          </div>
-        ))}
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((product) => (
+            <div key={product.id} className="product-item">
+              <img src={product.imageUrl} alt={product.name} className="product-image" />
+              <p className="product-name">{product.name}</p>
+            </div>
+          ))
+        ) : (
+          <p className="no-matching-products">No matching products found.</p>
+        )}
       </div>
     </div>
   );
